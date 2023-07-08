@@ -2,26 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+.my-masonry-grid {
+   display: -webkit-box; /* Not needed if autoprefixing */
+   display: -ms-flexbox; /* Not needed if autoprefixing */
+   display: flex;
+   padding-top: 10px;
+   gap: 4rem;
+   margin-left: 0; /* gutter size offset */
+   width: auto;
+ }
+ .my-masonry-grid_column {
+ 
+   background-clip: padding-box;
+ }
+ 
+ /* Style your items */
+ .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+   background: grey;
+   margin-bottom: 4rem;
+   
+ }
