@@ -9,8 +9,8 @@ function Footer() {
 					<img src="/info.svg"/>
 					<p className='text-white text-sm'>Polityka Prywatnosci</p>
 				</div>
-				<a className='hover:scale-110 transition-all' href='https://www.facebook.com/profile.php?id=100083640406301'><img src="/facebook.svg" alt='facebook'/></a>
-				<a className='hover:scale-110 transition-all' href='#'><img src="/google.svg" alt='google'/></a>
+				<a className='hover:scale-110 transition-all' href='https://www.facebook.com/profile.php?id=100083640406301'><img src="/Facebook.svg" alt='facebook'/></a>
+				<a className='hover:scale-110 transition-all' href='#'><img src="/Google.svg" alt='google'/></a>
 			</div>
 			<div className='flex gap-5 '>
 				<div className='flex gap-2 items-center hover:scale-105 transition-all'>
