@@ -21,7 +21,7 @@ function RealizationPhoto({ image }) {
         columnClassName="my-masonry-grid_column"
       >
         {image[0].map((img) => (
-          <Fade>
+          <Fade key={img}>
             <img className=" drop-shadow-xl shadow-xl cursor-pointer hover:translate-x-4 hover:translate-y-4 hover:scale-105 transform transition-all duration-500 ease-in-out "
               onClick={() => {
                 setCurentImage(img);
