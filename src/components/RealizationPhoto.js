@@ -15,7 +15,7 @@ function RealizationPhoto({ image }) {
 
   return (
     <div className="">
-	{currentImage ? <img onClick={()=>setCurentImage(null)} className="fixed mt-[-220px] md:-mx-20 z-50 w-full h-full object-cover bg/50" src={currentImage}/> : null}
+	{currentImage ? <Image width={407} height={305}  onClick={()=>setCurentImage(null)} className="fixed mt-[-220px] md:-mx-20 z-50 w-full h-full object-cover bg/50" src={currentImage}/> : null}
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid "
@@ -23,7 +23,7 @@ function RealizationPhoto({ image }) {
       >
         {image[0].map((img) => (
           <Fade key={img}>
-            <Image width={1440} height={1080} className=" drop-shadow-xl shadow-xl cursor-pointer hover:translate-x-4 hover:translate-y-4 hover:scale-105 transform transition-all duration-500 ease-in-out "
+            <Image  className=" drop-shadow-xl shadow-xl cursor-pointer hover:translate-x-4 hover:translate-y-4 hover:scale-105 transform transition-all duration-500 ease-in-out "
               onClick={() => {
                 setCurentImage(img);
               }}
