@@ -7,7 +7,7 @@ const nextConfig = {
 		remotePatterns: [
 		  {
 			protocol: "http",
-			hostname: "stylmetal.pl",
+			hostname: "admin.stylmetal.pl",
 			port: "",
 			pathname: "/wp-content/uploads/**",
 		  },
