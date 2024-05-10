@@ -20,14 +20,29 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   useEffect(() => {
-    // Dodanie skryptu GTM do <head>
-    const script = document.createElement('script');
-    script.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    // Existing GTM script
+    const script1 = document.createElement('script');
+    script1.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KGJFJH5R');`;
-    document.head.appendChild(script);
+    document.head.appendChild(script1);
+
+    // New gtag script
+    const script2 = document.createElement('script');
+    script2.src = "https://www.googletagmanager.com/gtag/js?id=G-YR8302C8CX";
+    script2.async = true;
+    document.head.appendChild(script2);
+
+    const script3 = document.createElement('script');
+    script3.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YR8302C8CX');
+    `;
+    document.head.appendChild(script3);
   }, []);
 
   return (
@@ -36,6 +51,9 @@ export default function RootLayout({ children }) {
       <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGJFJH5R"
         height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
+      </noscript>
+      <noscript>
+        
       </noscript>
       {/* End Google Tag Manager (noscript) */}
         <Header />
