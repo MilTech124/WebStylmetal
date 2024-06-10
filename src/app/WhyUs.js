@@ -9,16 +9,16 @@ function WhyUs() {
       {/* left column */}
       <div className="flex flex-col text-right pr-5 gap-20 pt-20 basis-1/3">
         <div className="hover:scale-105 transition-all">
-          <h1 className="md:text-xl font-bold underline">
+          <h3 className="md:text-xl font-bold underline">
             Doradztwo na najwyższym poziomie
-          </h1>
+          </h3>
           <p className="text-sm pt-2">
             Znajdź odpowiedzi na Twoje pytania! Nie trać czasu na poszukiwanie
             informacji, skonsultuj się z nami.
           </p>
         </div>
         <div className="hover:scale-105 transition-all">
-          <h1 className="md:text-xl font-bold underline">Produkcja</h1>
+          <h3 className="md:text-xl font-bold underline">Produkcja</h3>
           <p className="text-sm pt-2">
             Nasza produkcja w garażach blaszanych to gwarancja solidności i
             funkcjonalności. Tworzymy garaże blaszane przystosowane do Twoich
@@ -26,7 +26,7 @@ function WhyUs() {
           </p>
         </div>
         <div className="hover:scale-105 transition-all">
-          <h1 className="md:text-xl font-bold underline">Montaż</h1>
+          <h3 className="md:text-xl font-bold underline">Montaż</h3>
           <p className="text-sm pt-2">
             Nasza usługa montażu obejmuje kompleksowe działania. Nasz zespół
             posiada niezbędne narzędzia i umiejętności, aby zapewnić efektywny i
@@ -39,11 +39,11 @@ function WhyUs() {
       {/* right column */}
       <div className="flex pl-5 flex-col gap-20 basis-1/3">
         <div className="hover:scale-105 transition-all">
-          <h1 className="md:text-xl font-bold underline">Kontakt</h1>
+          <h3 className="md:text-xl font-bold underline">Kontakt</h3>
           <p className="text-sm pt-2">Twoj sukces zaczyna się tutaj !</p>
         </div>
         <div className="hover:scale-105 transition-all">
-          <h1 className="md:text-xl font-bold underline">Konfiguracja garażu</h1>
+          <h3 className="md:text-xl font-bold underline">Konfiguracja garażu</h3>
           <p className="text-sm pt-2">
             Oferujemy szeroki zakres opcji konfiguracji garażu, abyś mógł
             dostosować go do swoich indywidualnych potrzeb. Możesz wybrać
@@ -52,7 +52,7 @@ function WhyUs() {
           </p>
         </div>
         <div className="hover:scale-105 transition-all">
-          <h1 className="md:text-xl font-bold underline">Transport</h1>
+          <h3 className="md:text-xl font-bold underline">Transport</h3>
           <p className="text-sm pt-2">
             Oferujemy kompleksowe usługi garaży z transportem, aby zapewnić Ci
             łatwość i wygodę .{" "}

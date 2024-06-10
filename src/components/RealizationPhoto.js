@@ -15,7 +15,7 @@ function RealizationPhoto({ image }) {
 
   return (
     <div className="">
-	{currentImage ? <Image width={407} height={305}  onClick={()=>setCurentImage(null)} className="fixed mt-[-220px] md:-mx-20 z-50 w-full h-full object-cover bg/50" src={currentImage}/> : null}
+	{currentImage ? <Image width={1920} height={1280} onClick={()=>setCurentImage(null)} className="fixed mt-[-220px] md:-mx-20 z-50 w-full h-full object-cover bg/50" src={currentImage}/> : null}
       <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid "
@@ -29,6 +29,9 @@ function RealizationPhoto({ image }) {
               }}
               src={img}
               key={img}
+              width={407}
+              height={305}
+              alt="realization-photo"
             />
           </Fade>
         ))}

@@ -11,7 +11,7 @@ function Hero() {
           </p>
         </div>
       </div>
-      <img src="/garage-hero.webp" className="mt-[-300px] max-sm:mt-[-200px] hover:translate-x-10 hover:scale-105 transition-all duration-300" />
+      <img src="/garage-hero.webp" alt="hero-img" className="mt-[-300px] max-sm:mt-[-200px] hover:translate-x-10 hover:scale-105 transition-all duration-300" />
     </>
   );
 }
