@@ -2,7 +2,7 @@ import RealizationPhoto from "@/components/RealizationPhoto";
 
 const getData = async () => {
   const res = await fetch(
-    "http://admin.stylmetal.pl/wp-json/wp/v2/pages/?slug=realizacje"
+    "http://admin.stylmetal.pl/wp-json/wp/v2/pages/?slug=realizacje",{ next: { revalidate: 3600 } }
   );
   return res.json();
 };
