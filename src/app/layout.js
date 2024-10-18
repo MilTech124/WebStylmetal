@@ -1,61 +1,53 @@
-'use client'
+'use client';
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
-import { useEffect } from 'react';
-
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ["latin"] });
-// export const metadata = {
-//   title: "Stylmetal - producent garaży",
-//   description: "Stylmetal to firma produkująca garaże na zamówienie. Oferujemy szeroki wybór garaży, od klasycznych po nowoczesne. Nasze garaże są wykonane z najwyższej jakości materiałów i objęte gwarancją.",
-//   keywords: "garaże, garaże na zamówienie, garaże metalowe, garaże blaszane, garaże drewniane, garaże murowane",
-//   robots: "index, follow",
-//   author: "Jarosław Matusiak",
-//   viewport: "width=device-width, initial-scale=1",
-//   favicon: "favicon.ico",
-// };
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    // Existing GTM script
-    const script1 = document.createElement('script');
-    script1.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KGJFJH5R');`;
-    document.head.appendChild(script1);
-
-    // New gtag script
-    const script2 = document.createElement('script');
-    script2.src = "https://www.googletagmanager.com/gtag/js?id=G-YR8302C8CX";
-    script2.async = true;
-    document.head.appendChild(script2);
-
-    const script3 = document.createElement('script');
-    script3.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-YR8302C8CX');
-    `;
-    document.head.appendChild(script3);
-  }, []);
-
   return (
-    <html lang="pl">   
+    <html lang="pl">
+      <Head>
+        {/* Google Tag Manager */}
+        <script dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-W86P8SNJ');`
+        }} />
+
+        {/* Meta Pixel Code */}
+        <script dangerouslySetInnerHTML={{
+          __html: `!function(f,b,e,v,n,t,s)
+          {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+          n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+          if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+          n.queue=[];t=b.createElement(e);t.async=!0;
+          t.src=v;s=b.getElementsByTagName(e)[0];
+          s.parentNode.insertBefore(t,s)}(window, document,'script',
+          'https://connect.facebook.net/en_US/fbevents.js');
+          fbq('init', '3683407461970574');
+          fbq('track', 'PageView');`
+        }} />
+      </Head>
+
       <body className={inter.className}>
-      <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGJFJH5R"
-        height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
-      </noscript>
-      <noscript>
-        
-      </noscript>
-      {/* End Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W86P8SNJ"
+            height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
+        </noscript>
+
+        {/* Meta Pixel (noscript) */}
+        <noscript>
+          <img height="1" width="1" style={{ display: "none" }}
+            src="https://www.facebook.com/tr?id=3683407461970574&ev=PageView&noscript=1" />
+        </noscript>
+
         <Header />
         {children}
         <Footer />
