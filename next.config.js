@@ -5,14 +5,20 @@ const nextConfig = {
 	// reactStrictMode: true,
 	images: {
 		remotePatterns: [
-		  {
-			protocol: "http",
-			hostname: "admin.stylmetal.pl",
-			port: "",
-			pathname: "/wp-content/uploads/**",
-		  },
+			{
+				protocol: "http",
+				hostname: "admin.stylmetal.pl",
+				port: "",
+				pathname: "/wp-content/uploads/**",
+			},
+			{
+				protocol: "https",
+				hostname: "admin.stylmetal.pl",
+				port: "",
+				pathname: "/wp-content/uploads/**",
+			},
 		],
 	},
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

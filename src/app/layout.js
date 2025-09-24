@@ -1,5 +1,8 @@
 'use client';
 import "./globals.css";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Inter } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,8 +15,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pl">
       <Head>
-        <title>Skonfiguruj Garaż</title>
-        <meta name="description" content="Konfigurator garaży metalowych" />
+        <title>Skonfiguruj Gara??</title>
+        <meta name="description" content="Konfigurator gara??y metalowych" />
       </Head>
 
       {/* Google Tag Manager */}
