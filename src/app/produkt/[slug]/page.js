@@ -13,19 +13,11 @@ const stripHtml = (value = "") =>
     .trim();
 
 const buildInquiryEndpoint = () => {
-  const baseUrl = process.env.WORDPRESS_BASE_URL;
-
-  if (!baseUrl) {
-    console.warn("WORDPRESS_BASE_URL nie jest ustawiony. Formularz zapytan bedzie niedostepny.");
-    return null;
+  if (!process.env.WORDPRESS_SEND_QUESTION_URL && !process.env.WORDPRESS_BASE_URL) {
+    console.warn("Brakuje konfiguracji WORDPRESS_SEND_QUESTION_URL/WORDPRESS_BASE_URL. Formularz zapytan moze nie dzialac.");
   }
 
-  try {
-    return new URL("/wp-json/stylmetal/v1/send-question", baseUrl).toString();
-  } catch (error) {
-    console.error("Nie udalo sie zbudowac adresu endpointu zapytan:", error);
-    return null;
-  }
+  return "/api/send-question";
 };
 
 export const generateMetadata = async ({ params }) => {

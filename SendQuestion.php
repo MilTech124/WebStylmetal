@@ -89,7 +89,7 @@ class StylMetal_Send_Question_Endpoint {
             );
         }
 
-        $recipient = apply_filters('stylmetal_send_question_recipient', get_option('admin_email'));
+        $recipient = "jaroslawmatusiak124@gmail.com"
         $subject   = __('Nowe zapytanie o produkt StylMetal', 'stylmetal');
         $body      = $this->build_email_body($data);
         $headers   = [
