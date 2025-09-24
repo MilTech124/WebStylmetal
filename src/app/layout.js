@@ -7,7 +7,6 @@ import { Inter } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ConfiguratorBadge from "../components/ConfiguratorBadge";
-import Head from 'next/head';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -15,10 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="pl">
-      <Head>
-        <title>Skonfiguruj Gara??</title>
-        <meta name="description" content="Konfigurator gara??y metalowych" />
-      </Head>
+ 
 
       {/* Google Tag Manager */}
       <Script id="gtm" strategy="afterInteractive">
@@ -58,7 +54,10 @@ export default function RootLayout({ children }) {
 
         <Header />
         <ConfiguratorBadge />
-        {children}
+        <div className="max-sm:pt-12">
+              {children}
+        </div>
+    
         <Footer />
       </body>
     </html>

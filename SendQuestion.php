@@ -89,15 +89,15 @@ class StylMetal_Send_Question_Endpoint {
             );
         }
 
-        $recipient = "jaroslawmatusiak124@gmail.com"
-        $subject   = __('Nowe zapytanie o produkt StylMetal', 'stylmetal');
+        $recipient = apply_filters('stylmetal_send_question_recipient', get_option('admin_email'));
+        $subject   = __('Nowe zapytanie o Garaż', 'stylmetal');
         $body      = $this->build_email_body($data);
         $headers   = [
             'Content-Type: text/plain; charset=UTF-8',
             sprintf('Reply-To: %s <%s>', trim($data['first_name'] . ' ' . $data['last_name']), $data['email']),
         ];
 
-        $sent = wp_mail($recipient, $subject, $body, $headers);
+        $sent = wp_mail("biuro@stylmetal.pl", $subject, $body, $headers);
 
         if (!$sent) {
             return new WP_Error(
